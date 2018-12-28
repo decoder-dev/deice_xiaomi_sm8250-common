@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 -keep class org.lineageos.settings.doze.* {
   *;
 }
 
 -keep class org.lineageos.settings.popupcamera.* {
+=======
+-keep class org.lineageos.settings.dirac.* {
+>>>>>>> 167171e (sm8250-common: parts: Add DiracSound backend)
   *;
 }
