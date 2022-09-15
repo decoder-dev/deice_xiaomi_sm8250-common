@@ -136,7 +136,8 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libspkrprot \
     libvisualizer \
-    libvolumelistener
+    libvolumelistener \
+    sound_trigger.primary.kona
 
 # Audio Alsa Extensions
 PRODUCT_PACKAGES += \
