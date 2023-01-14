@@ -19,7 +19,6 @@
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
-#include "SunlightEnhancement.h"
 #include "livedisplay/sdm/SDMController.h"
 
 using android::OK;
@@ -27,22 +26,11 @@ using android::sp;
 using android::status_t;
 
 using ::vendor::lineage::livedisplay::V2_0::sdm::SDMController;
-using ::vendor::lineage::livedisplay::V2_1::ISunlightEnhancement;
-using ::vendor::lineage::livedisplay::V2_1::implementation::SunlightEnhancement;
 
 int main() {
     status_t status = OK;
     std::shared_ptr<SDMController> controller = std::make_shared<SDMController>();
-    sp<SunlightEnhancement> se = new SunlightEnhancement();
     android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
-
-    // SunlightEnhancement service
-    status = se->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
-                   << status << ")";
-        return 1;
-    }
 
     LOG(INFO) << "LiveDisplay HAL service is ready.";
 
