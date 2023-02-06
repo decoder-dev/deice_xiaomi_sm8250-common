@@ -28,7 +28,7 @@ using android::status_t;
 using ::vendor::lineage::livedisplay::V2_0::sdm::SDMController;
 
 int main() {
-    status_t status = OK;
+//    status_t status = OK;
     std::shared_ptr<SDMController> controller = std::make_shared<SDMController>();
     android::hardware::configureRpcThreadpool(1, true /*callerWillJoin*/);
 
