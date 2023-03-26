@@ -128,6 +128,9 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 persist.bluetooth.sbc_hd_higher_bitrate=1
 
+# Camera
+persist.vendor.camera.logInfoMask=false
+
 # Chipset
 ro.soc.manufacturer=QTI
 ro.soc.model=SM8250
