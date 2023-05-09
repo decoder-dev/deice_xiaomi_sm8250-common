@@ -40,11 +40,7 @@ public final class RefreshUtils {
     protected static final int STATE_STANDARD = 1;
     protected static final int STATE_EXTREME = 2;
 
-<<<<<<< HEAD
-    private static final float REFRESH_STATE_DEFAULT = 120f;
-=======
     private static final float REFRESH_STATE_DEFAULT = 60f;
->>>>>>> 1202783 (sm8250-common: parts: Add per app maximum refresh rate)
     private static final float REFRESH_STATE_STANDARD = 60f;
     private static final float REFRESH_STATE_EXTREME = 120f;
 
@@ -68,13 +64,8 @@ public final class RefreshUtils {
     }
 
    protected void getOldRate(){
-<<<<<<< HEAD
-        defaultMaxRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, REFRESH_STATE_DEFAULT);
-        defaultMinRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
-=======
         defaultMaxRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, 60);
         defaultMinRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, 60);
->>>>>>> 1202783 (sm8250-common: parts: Add per app maximum refresh rate)
     }
 
 
@@ -147,8 +138,4 @@ public final class RefreshUtils {
 	Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
         Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxrate);
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 1202783 (sm8250-common: parts: Add per app maximum refresh rate)
