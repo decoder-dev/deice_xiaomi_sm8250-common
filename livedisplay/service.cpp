@@ -19,7 +19,6 @@
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
-
 #include "SunlightEnhancement.h"
 #include "livedisplay/sdm/SDMController.h"
 
