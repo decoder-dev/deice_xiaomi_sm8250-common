@@ -547,9 +547,11 @@ PRODUCT_PACKAGES += \
 endif
 
 
+ifeq ($(TARGET_USE_HIGH_TOUCH_POLLING_RATE),true)
 # Touch
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.xiaomi
+endif
 
 # USB
 PRODUCT_PACKAGES += \
