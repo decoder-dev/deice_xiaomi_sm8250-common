@@ -19,3 +19,5 @@ bluetooth.profile.sap.server.enabled?=true
 # Charging
 ro.charger.enable_suspend=1
 
+# DPM
+persist.vendor.dpm.feature=11
