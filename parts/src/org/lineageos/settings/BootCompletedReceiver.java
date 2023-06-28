@@ -26,6 +26,7 @@ import android.os.SystemProperties;
 import android.util.Log;
 import androidx.preference.PreferenceManager;
 
+import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.popupcamera.PopupCameraUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
@@ -44,13 +45,13 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
-
+		DiracUtils.initialize(context);
         DozeUtils.checkDozeService(context);
         PopupCameraUtils.checkPopupCameraService(context);
         ThermalUtils.startService(context);
         FileUtils.enableService(context);
-        RefreshUtils.startService(context); 
+        RefreshUtils.startService(context);
         boolean dcDimmingEnabled = sharedPrefs.getBoolean(DC_DIMMING_ENABLE_KEY, false);
-        FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0"); 
+        FileUtils.writeLine(DC_DIMMING_NODE, dcDimmingEnabled ? "1" : "0");
     }
 }
