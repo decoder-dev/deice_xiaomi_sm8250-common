@@ -104,6 +104,8 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
+    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl
 
@@ -213,11 +215,8 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor
 
 # DRM
-PRODUCT_PACKAGES += \ 
+PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
-	
-PRODUCT_PACKAGES += \ 
-    soundenchancer
 	
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor
