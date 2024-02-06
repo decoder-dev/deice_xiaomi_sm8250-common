@@ -7,4 +7,3 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 ```
-# sm8250-common

@@ -45,6 +45,11 @@ on post-fs-data
     mkdir /mnt/vendor/persist/fpc 0770 system system
     mkdir /mnt/vendor/persist/goodix 0770 system system
 
+# Health
+on boot
+    chmod 0660 /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/input_suspend
+
 # NFC
 service qti_esepowermanager_service_1_1 /vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
     override
@@ -60,9 +65,9 @@ service secureelement-hal_1_2 /vendor/bin/hw/vendor.qti.secure_element@1.2-servi
     group system
     disabled
 
-service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc_snxxx@1.2-service
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc-service.nxp
     override
-    class hal
+    class early_hal
     user nfc
     group nfc
     disabled
@@ -81,13 +86,6 @@ service vendor.btmac-sh /vendor/bin/init.mi.btmac.sh
     user system
     group system bluetooth wifi
     oneshot
-    disabled
-
-# Ril
-service vendor.imsrcsservice /vendor/bin/imsrcsd
-    class main
-    user radio
-    group radio vendor_qti_diag log inet wakelock
     disabled
 
 # Touch

@@ -7,6 +7,7 @@
 LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter alioth apollon cas cmi dagu elish enuma lmi munch psyche thyme umi,$(TARGET_DEVICE)),)
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
